@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -179,4 +180,10 @@ class MyNotesActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.blog){
+            val intent =  Intent(this@MyNotesActivity,BlogActivity::class.java)
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
