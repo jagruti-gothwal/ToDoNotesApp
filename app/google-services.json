@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "142836452265",
+    "firebase_url": "https://todo-cc474.firebaseio.com",
+    "project_id": "todo-cc474",
+    "storage_bucket": "todo-cc474.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142836452265:android:b948fbd0259c7ef98f92b8",
+        "android_client_info": {
+          "package_name": "com.jagruti.todonotesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142836452265-vr870k1fvrrbvkc3ism0qbbchi73f6vf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_p_tzTpSh3ODLn79vDDnjS1yUjsRIqqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142836452265-vr870k1fvrrbvkc3ism0qbbchi73f6vf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
