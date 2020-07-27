@@ -183,6 +183,7 @@ class MyNotesActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.blog){
             val intent =  Intent(this@MyNotesActivity,BlogActivity::class.java)
+            startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
     }
