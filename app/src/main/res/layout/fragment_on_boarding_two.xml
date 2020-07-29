@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/img"
     tools:context=".onboarding.OnBoardingTwoFragment">
 
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Let's Begin"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="#F8F4F4"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,12 +35,12 @@
         app:layout_constraintVertical_bias="0.233" />
 
     <TextView
+        android:id="@+id/textViewDone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewDone"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="Done"
-        android:textColor="#F8F4F4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.97"
@@ -50,9 +50,9 @@
         android:id="@+id/textViewBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#F8F4F4"
         android:text="Back"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FBF9F9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.03"
