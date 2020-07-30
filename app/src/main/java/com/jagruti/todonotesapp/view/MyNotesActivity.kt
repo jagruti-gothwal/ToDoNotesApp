@@ -1,5 +1,6 @@
 package com.jagruti.todonotesapp.view
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -27,6 +28,7 @@ import com.jagruti.todonotesapp.R
 import com.jagruti.todonotesapp.adapter.NotesAdapter
 import com.jagruti.todonotesapp.clicklistner.ItemClickListener
 import com.jagruti.todonotesapp.db.Notes
+import com.jagruti.todonotesapp.utils.StoreSession
 import com.jagruti.todonotesapp.workmanager.MyWorker
 import kotlinx.android.synthetic.main.activity_my_notes.*
 import java.util.*
@@ -77,7 +79,6 @@ class MyNotesActivity : AppCompatActivity() {
                     val intent = Intent(this@MyNotesActivity,AddNotesActivity::class.java)
                     startActivityForResult(intent,ADD_NOTES_CODE)
                 }
-
             })
     }
 
@@ -93,12 +94,12 @@ class MyNotesActivity : AppCompatActivity() {
             fullName = intent.getStringExtra(AppConstant.FULL_NAME)
         }
         if (TextUtils.isEmpty(fullName)) {
-            fullName = sharedPreferences!!.getString(PrefConstant.FULL_NAME, "")
+            fullName = StoreSession.readString(PrefConstant.FULL_NAME)
         }
     }
 
     private fun setupSharedPreference() {
-        sharedPreferences = getSharedPreferences(PrefConstant.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)
+        StoreSession.init(this)
     }
 
 
@@ -162,7 +163,7 @@ class MyNotesActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode==ADD_NOTES_CODE){
+        if(requestCode==ADD_NOTES_CODE && resultCode== Activity.RESULT_OK){
             val title = data?.getStringExtra(AppConstant.TITLE)
             val description = data?.getStringExtra(AppConstant.DESCRIPTION)
             val imagePath = data?.getStringExtra(AppConstant.IMAGE_PATH)

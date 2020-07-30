@@ -12,13 +12,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.jagruti.todonotesapp.utils.AppConstant
 import com.jagruti.todonotesapp.utils.PrefConstant
 import com.jagruti.todonotesapp.R
+import com.jagruti.todonotesapp.utils.StoreSession
 
 public class LoginActivity : AppCompatActivity(){
     lateinit var editTextFullName : EditText
     lateinit var editTextUserName : EditText
     lateinit var buttonLogin : Button
-    lateinit var sharedPreferences : SharedPreferences
-    lateinit var editor: SharedPreferences.Editor
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,18 +52,14 @@ public class LoginActivity : AppCompatActivity(){
     }
 
     private fun saveFullName(fullName: String) {
-        editor = sharedPreferences.edit()
-        editor.putString(PrefConstant.FULL_NAME,fullName)
-        editor.apply()
+        StoreSession.write(PrefConstant.FULL_NAME,fullName)
     }
 
     private fun saveLoginStatus() {
-        editor = sharedPreferences.edit()
-        editor.putBoolean(PrefConstant.IS_LOGGED_IN,true)
-        editor.apply()
+        StoreSession.write(PrefConstant.IS_LOGGED_IN, true)
     }
 
     private fun setupSharedPreferences() {
-        sharedPreferences = getSharedPreferences(PrefConstant.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)
+        StoreSession.init(this)
     }
 }

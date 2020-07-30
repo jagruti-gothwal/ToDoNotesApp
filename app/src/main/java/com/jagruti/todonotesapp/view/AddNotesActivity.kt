@@ -56,6 +56,7 @@ class AddNotesActivity : AppCompatActivity() {
             }
 
         })
+
         buttonSubmit.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val intent = Intent()
@@ -98,6 +99,10 @@ class AddNotesActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 
     private fun setupDialog() {
